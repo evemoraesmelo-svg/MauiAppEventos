@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MauiAppEventos.Views.CadastroEvento"
+    Title="Cadastro de Eventos"
+    BackgroundColor="#F2F5FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="15">
+
+            <Label
+                Text="Cadastro de Eventos"
+                FontSize="26"
+                FontAttributes="Bold"
+                TextColor="#17365D"
+                HorizontalOptions="Center"/>
+
+            <Label Text="Nome do evento" TextColor="#17365D"/>
+            <Entry
+                Placeholder="Digite o nome do evento"
+                Text="{Binding NomeEvento}"/>
+
+            <Label Text="Data de início" TextColor="#17365D"/>
+            <DatePicker
+                Date="{Binding DataInicio, Mode=TwoWay}"/>
+
+            <Label Text="Data de término" TextColor="#17365D"/>
+            <DatePicker
+                Date="{Binding DataTermino, Mode=TwoWay}"/>
+
+            <Label Text="Número de participantes" TextColor="#17365D"/>
+            <Entry
+                Placeholder="Ex: 50"
+                Keyboard="Numeric"
+                Text="{Binding NumeroParticipantes}"/>
+
+            <Label Text="Local do evento" TextColor="#17365D"/>
+            <Entry
+                Placeholder="Digite o local"
+                Text="{Binding LocalEvento}"/>
+
+            <Label Text="Custo por participante (R$)" TextColor="#17365D"/>
+            <Entry
+                Placeholder="Ex: 80,00"
+                Keyboard="Numeric"
+                Text="{Binding CustoPorParticipante}"/>
+
+            <Button
+                Text="CADASTRAR EVENTO"
+                BackgroundColor="#17365D"
+                TextColor="White"
+                CornerRadius="12"
+                HeightRequest="50"
+                Clicked="OnCadastrarClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
